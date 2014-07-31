@@ -73,11 +73,59 @@ var titleCase = function(string) {
 
 console.log(titleCase("This is awesome"));
 
-//
+// String manipulation 
 var substituteSeparator = function(string, current, revised) {
     var separated = string.split(current);
     return separated.join(revised);
 };
 
 console.log(substituteSeparator('a,b,c', ',', '/'));
+
+// Number formatting with decimal places.
+
+var numberFormat = function(number, places) {
+  return number.toFixed(places);
+};
+
+console.log(numberFormat(20.555, 2));
+
+// Fuzzy matching
+
+var fuzzyFunction = function(num1, num2, fuzzy) {
+    var compare = "";
+    var isFuzzy = "";
+    if(num1 > num2) {
+        compare = "greater than";
+        if(num1 <= num2 + num2*(fuzzy/100))    
+            isFuzzy = "is within "+fuzzy+"%";
+        else
+            isFuzzy = "is not within "+fuzzy+"%";
+    } else if(num1 < num2) {
+      compare = "Lesser than";
+      if(num1 >= num2 - num2*(fuzzy/100))
+        isFuzzy = "is within "+fuzzy+"%";
+      else
+        isFuzzy = "is not within "+fuzzy+"%";
+    } else { 
+        compare = "equal to";
+        isFuzzy = "is within "+fuzzy+"%";
+    }
+    return num1 + " " + compare + " " + num2 + " and " + isFuzzy + " of " + num2;
+                  
+};
+console.log(fuzzyFunction(6, 10, 40));
+console.log(fuzzyFunction(80, 10, 200));
+console.log(fuzzyFunction(3, 5, 1));
+
+//
+
+function stringToNumber(string) {
+    if(isNaN(string))
+        return false;
+    return parseFloat(string);
+}
+
+console.log(stringToNumber("42"));
+console.log(stringToNumber("23.333"));
+console.log(stringToNumber("number"));
 
