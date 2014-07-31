@@ -129,3 +129,14 @@ console.log(stringToNumber("42"));
 console.log(stringToNumber("23.333"));
 console.log(stringToNumber("number"));
 
+// date math function
+
+var dateDiff = function(date1, date2, type) {
+    var time = Math.abs(date1 -date2) / 1000 / 60 /60;
+    if (type === "days") 
+        time /= 24;
+    return time;
+};
+
+console.log(dateDiff(new Date('7/24/2014'), new Date(), 'hours'));
+console.log(dateDiff(new Date('7/25/2014'), new Date(), 'days'));
