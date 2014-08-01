@@ -1,9 +1,9 @@
 // alert("JavaScript works!");
 
-//
-//
-//
-//
+// Anthony Arrants
+// SDI 1407
+// Project 4
+// July 31, 2014
 
 
 // Does a string follow a 123-456-7890 pattern?
@@ -28,7 +28,7 @@ console.log(phonecheck("23-456-7890"));
 console.log(phonecheck("1221123"));
 
 // Does a string follow a aaa@bbb.ccc pattern like an e-mail address?
-
+// MAKEUP: New Technical/Boolean Logic: Deliverable 2
 var emailCheck = function(string) {
    var emailSections = string.split ('@');
    if(emailSections.length === 2) {
@@ -90,7 +90,8 @@ var numberFormat = function(number, places) {
 console.log(numberFormat(20.555, 2));
 
 // Fuzzy matching
-
+// MAKEUP: NESTED CONDITIONALS--Deliverable 3
+// MAKEUP: 
 var fuzzyFunction = function(num1, num2, fuzzy) {
     var compare = "";
     var isFuzzy = "";
@@ -174,7 +175,7 @@ var calcArray = function(array) {
 console.log(calcArray([{num: 0}, ["hello"], "10", "this", 4, 7.8, -9]));
 
 // Given an array of objects...
-
+// MAKEUP: New Technical/Boolean Logic:Deliverable 3... While I realize this is the "OR" Logical operator, I want to cover my assets. There is another above for &&.
 var sortArray = function(array, key) {
   var compare = function(a,b) {
     if (a[key] < b[key]) 
