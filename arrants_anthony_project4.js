@@ -117,7 +117,7 @@ console.log(fuzzyFunction(6, 10, 40));
 console.log(fuzzyFunction(80, 10, 200));
 console.log(fuzzyFunction(3, 5, 1));
 
-//
+// Given a string version...
 
 function stringToNumber(string) {
     if(isNaN(string))
@@ -140,3 +140,57 @@ var dateDiff = function(date1, date2, type) {
 
 console.log(dateDiff(new Date('7/24/2014'), new Date(), 'hours'));
 console.log(dateDiff(new Date('7/25/2014'), new Date(), 'days'));
+
+// Find the smallest value in an array...
+
+var compareArray = function(array, number) {
+  var sortNumbers = function(a, b) {
+  return a - b;
+  };
+  array.sort(sortNumbers);
+  
+  for(var item in array) {
+    if(array[item] > number)
+        return array[item];
+  }
+  
+  return false;
+};
+
+console.log(compareArray([7,9,3,4,2,10], 8));
+console.log(compareArray([10,9,8,7,4,1], 6));
+
+// Find the total value of just the numbers in an array, even if some of the items are not numbers.
+
+var calcArray = function(array) {
+  var sum = 0;
+  for(var item in array){
+    if (typeof array [item] === 'number') 
+        sum += array [item];
+    }
+    return sum;
+};
+
+console.log(calcArray([{num: 0}, ["hello"], "10", "this", 4, 7.8, -9]));
+
+// Given an array of objects...
+
+var sortArray = function(array, key) {
+  var compare = function(a,b) {
+    if (a[key] < b[key]) 
+        return -1;
+    if (a[key] > b[key] || a[key] === undefined) 
+        return 1;
+       return 0;
+  }
+  
+  array.sort(compare);
+  return array;
+};
+
+console.log(sortArray([{'b':1},{'a':3},{'a':4},{'a':2},{'a':1}], 'a'));
+    
+  
+
+
+
